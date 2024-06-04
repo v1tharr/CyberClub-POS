@@ -1,0 +1,2 @@
+# CyberClub_POS
+Диплом.
