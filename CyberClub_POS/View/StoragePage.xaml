@@ -1,0 +1,100 @@
+﻿<Page xmlns:hc="https://handyorg.github.io/handycontrol"  x:Class="CyberClub_POS.View.StoragePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CyberClub_POS.View"
+      mc:Ignorable="d" 
+      
+      Title="StoragePage">
+
+    <Grid Background="#23262B" Width="1241" Height="582">
+
+        <DataGrid Name="StorageDG" AutoGenerateColumns="False" SelectionMode="Extended" CanUserResizeRows="False" 
+                  CanUserResizeColumns="True" CanUserReorderColumns="False" Loaded="DataGrid_Loaded"
+                  Margin="44,39,111,10">
+
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="AllSelect"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn x:Name="Storage_ID_DG" Header="№" Width="*" Binding="{Binding Path=ProductID}"/>
+                <DataGridTextColumn x:Name="Storage_PName_DG" Header="Название" Width="*" Binding="{Binding Path=ProductName}"/>
+                <DataGridTextColumn x:Name="Storage_Category_DG" Header="Категория" Width="*" Binding="{Binding Path=ProdCategory}"/>
+                <DataGridTextColumn x:Name="Storage_Price_DG" Header="Цена" Width="*" Binding="{Binding Path=Price}"/>
+                <DataGridTextColumn x:Name="Storage_AQ_DG" Header="Наличие" Width="*" Binding="{Binding Path=AvailableQuantity}"/>
+                <DataGridTemplateColumn x:Name="Storage_operation" Header="Действие" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="EditRow_btn" Width="30" Height="15" Cursor="Hand" Click="EditRow_btn_Click" >
+                                    <Button.Style>
+                                        <Style TargetType="{x:Type Button}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Background" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="BorderThickness" Value="0" />
+                                            <Setter Property="OverridesDefaultStyle" Value="True" />
+                                        </Style>
+                                    </Button.Style>
+                                    <Image Source="/Assets/img_storage_edit.png"/>
+                                </Button>
+                                <Button x:Name="DeleteRow_btn" Width="30" Cursor="Hand" Height="15" Click="DeleteRow_btn_Click">
+                                    <Button.Style>
+                                        <Style TargetType="{x:Type Button}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Background" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="BorderThickness" Value="0" />
+                                            <Setter Property="OverridesDefaultStyle" Value="True" />
+                                        </Style>
+                                    </Button.Style>
+                                    <Image Source="/Assets/img_storage_delete.png"/>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Text="Поиск:"  FontSize="16" FontWeight="Bold" 
+                   FontFamily="/Fonts/#Roboto Light" Foreground="LightGray" 
+                   Margin="44,10,1136,548"/>
+        <hc:SearchBar Name="SearchBar_Storage_DG" TextChanged="SearchBar_Storage_DG_TextChanged" Foreground="Black" 
+                      HorizontalAlignment="Left" Margin="105,6,0,0" 
+                      TextWrapping="Wrap" VerticalAlignment="Top" Width="536"/>
+        <Button Content="Добавить" Margin="646,6,0,0" Click="Add_Products_btn_Click" VerticalAlignment="Top" 
+                Width="240" HorizontalAlignment="Left" Height="28" RenderTransformOrigin="0.495,0.643" 
+                />
+        <Button Content="Обновить" Margin="891,6,0,0" Click="Update_DG_btn_Click" VerticalAlignment="Top" 
+            Width="239" HorizontalAlignment="Left" Height="28" RenderTransformOrigin="0.446,0.5" 
+                />
+    </Grid>
+</Page>

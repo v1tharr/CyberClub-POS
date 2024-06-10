@@ -1,0 +1,38 @@
+﻿<Page x:Class="CyberClub_POS.View.ReportsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CyberClub_POS.View"
+      mc:Ignorable="d" 
+
+
+      Title="ReportsPage">
+    <Page.Resources>
+        <DataTemplate x:Key="ReportHeaderDataTemplate">
+            <TextBlock Text="Отчет по продажам" Foreground="#462AD8" FontFamily="/Fonts/#Roboto Light" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        </DataTemplate>
+        <DataTemplate x:Key="ReportFooterDataTemplate">
+            <TextBlock Text="{DynamicResource PageNumber}" HorizontalAlignment="Right"/>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid Background="#23262B" Width="1241" Height="582">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="39,10,123,10">
+            <TextBlock Text="С:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+            <DatePicker x:Name="startDatePicker" Margin="5" Width="106"/>
+            <TextBlock Text="По:" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+            <DatePicker x:Name="endDatePicker" Margin="5" Width="106"/>
+            <Button Content="Создать отчет" Click="GenerateReport_Click" Margin="5" Width="200"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="74,42,99,10">
+            <StackPanel x:Name="reportContainer" Orientation="Vertical">
+                <!-- Элементы отчета добавлены программно -->
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

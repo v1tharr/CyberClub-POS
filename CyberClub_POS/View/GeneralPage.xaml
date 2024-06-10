@@ -1,0 +1,105 @@
+﻿<Page x:Class="CyberClub_POS.View.GeneralPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CyberClub_POS.View"
+      Title="GeneralPage">
+
+    <Grid Background="#23262B" Width="1241" Height="582">
+        <Image Source="/Assets/img_adminprofile.png" Margin="10,0,1133,471"/>
+        <Label Content="Логин:" Style="{x:Null}" BorderBrush="Transparent" Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="113,20,1061,527"/>
+        <Label Name="OperatorLogin" Style="{x:Null}" Content="{Binding Username}" Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="180,20,827,527"/>
+        <Label Content="ФИО:" Style="{x:Null}" Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="113,56,1074,484" RenderTransformOrigin="0.518,0.38"/>
+        <Label Name="OperatorFName" Style="{x:Null}" Content="{Binding FullName}"  Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="166,55,750,493"/>
+        <Label Content="Текущая смена:" Style="{x:Null}" Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="15,115,1081,435"/>
+        <Label Name="WorkedHoursL" Style="{x:Null}" Content="{Binding WorkedHours}" Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="160,116,891,438"/>
+        <!--<Label Content="Обслужено за смену:" Style="{x:Null}" Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="15,147,1030,400"/>-->
+        <!--<Label Name="ServicedClients" Style="{x:Null}" Content="0 чел." Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="199,149,891,406"/>-->
+        <Calendar  Name="MainCalendar" HorizontalAlignment="Left" Margin="354,131,0,0" VerticalAlignment="Top" Height="261" Width="266"/>
+        <TextBlock HorizontalAlignment="Left" Margin="15,152,0,0" FontSize="18" Foreground="LightGray" FontFamily="/Fonts/#Roboto Light" TextWrapping="Wrap" VerticalAlignment="Top" Height="22"><Run Language="ru-ru" Text=""/> <Hyperlink Click="HelpLink_Click"> Открыть руководство пользователя </Hyperlink> <LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <Button Click="CyberX_site_Click" Cursor="Hand" Background="Transparent" BorderBrush="Transparent" Height="48" HorizontalAlignment="Left"  Width="60" Margin="15,183,0,351">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="OverridesDefaultStyle" Value="True" />
+                </Style>
+            </Button.Style>
+            <Image Source="/Assets/cyberx_logo.png" />
+        </Button>
+
+        <Button Click="CyberX_VK_Click" Cursor="Hand" Background="Transparent" BorderBrush="Transparent" Margin="74,185,1113,345">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="OverridesDefaultStyle" Value="True" />
+                </Style>
+            </Button.Style>
+            <Image Source="/Assets/img_vk.png"/>
+        </Button>
+
+        <Button Click="Asiec_site_Click" Cursor="Hand" Background="Transparent" BorderBrush="Transparent" Margin="128,182,1061,342">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="OverridesDefaultStyle" Value="True" />
+                </Style>
+            </Button.Style>
+            <Image Source="/Assets/img_asiec.png"/>
+        </Button>
+
+        <Button Click="Me_GitHub_Click" Cursor="Hand" Background="Transparent" BorderBrush="Transparent" Margin="168,177,1005,337">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="OverridesDefaultStyle" Value="True" />
+                </Style>
+            </Button.Style>
+            <Image Source="/Assets/img_git.png"/>
+        </Button>
+    </Grid>
+</Page>

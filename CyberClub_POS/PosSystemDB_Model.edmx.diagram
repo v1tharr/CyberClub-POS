@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5160766dad3e4709a7d22c4405a5ae96" Name="Diagram1">
+        <EntityTypeShape EntityType="PosSystemDB_Model.Categories" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PosSystemDB_Model.Days" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PosSystemDB_Model.Periods" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PosSystemDB_Model.Prices" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PosSystemDB_Model.Products" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PosSystemDB_Model.Sales" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PosSystemDB_Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PosSystemDB_Model.Users" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="PosSystemDB_Model.FK__Prices__Category__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="PosSystemDB_Model.FK__Prices__DayID__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="PosSystemDB_Model.FK__Prices__PeriodID__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="PosSystemDB_Model.FK_Sales_Prices_New" ManuallyRouted="false" />
+        <AssociationConnector Association="PosSystemDB_Model.FK_Sales_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="PosSystemDB_Model.FK_Sales_Users_New" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
