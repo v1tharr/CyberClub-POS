@@ -16,7 +16,7 @@
             <ColumnDefinition Width="245*"/>
             <ColumnDefinition Width="997*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Редактировать" Margin="179,499,582,22" FontSize="16" Width="150" BorderThickness="0" Cursor="Hand" Foreground="White" FontFamily="/Fonts/#Roboto Light" Click="Button_Click" Grid.Column="1" >
+        <Button Content="Редактировать" Margin="159,499,687,22" FontSize="16" Width="150" BorderThickness="0" Cursor="Hand" Foreground="White" FontFamily="/Fonts/#Roboto Light" Click="Button_Click" Grid.Column="1" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="#462AD8"/>
@@ -60,5 +60,24 @@
         <RadioButton GroupName="1" Content="STREAM" Foreground="LightGray" HorizontalAlignment="Left" Margin="314,10,0,0" VerticalAlignment="Top" Height="28" Width="90" Grid.Column="1" Checked="RadioButton_Checked_2" />
         <RadioButton GroupName="1" Content="TV" Foreground="LightGray" HorizontalAlignment="Left" Margin="404,10,0,0" VerticalAlignment="Top" Height="28" Width="90" Grid.Column="1" Checked="RadioButton_Checked_3" />
         <RadioButton GroupName="1"  Content="ВСЕ"  Foreground="LightGray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="90" Margin="467,10,0,0" Grid.Column="1"  Checked="Update_RB" />
+        <Button Content="Обновить" Click="UpdateSettings1_btn_Click" Margin="337,499,502,22" FontSize="16" BorderThickness="0" Cursor="Hand" Foreground="White" FontFamily="/Fonts/#Roboto Light" Grid.Column="1" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#462AD8"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#28AEED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Page>

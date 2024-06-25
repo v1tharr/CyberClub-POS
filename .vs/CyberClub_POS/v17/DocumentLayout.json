@@ -1,12 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\CyberClub_POS\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\CyberClub_POS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2335FCD-3287-49F7-BC8A-75E3EEA54A96}|CyberClub_POS\\CyberClub_POS.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\cyberclub_pos\\cyberclub_pos\\view\\generalpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2335FCD-3287-49F7-BC8A-75E3EEA54A96}|CyberClub_POS\\CyberClub_POS.csproj|solutionrelative:cyberclub_pos\\view\\generalpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2335FCD-3287-49F7-BC8A-75E3EEA54A96}|CyberClub_POS\\CyberClub_POS.csproj|d:\\\u0443\u0447\u0435\u0431\u0430\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\cyberclub_pos\\cyberclub_pos\\view\\generalpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2335FCD-3287-49F7-BC8A-75E3EEA54A96}|CyberClub_POS\\CyberClub_POS.csproj|solutionrelative:cyberclub_pos\\view\\generalpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "View\\GeneralPage.xaml.cs",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\CyberClub_POS\\CyberClub_POS\\View\\GeneralPage.xaml.cs",
+              "RelativeDocumentMoniker": "CyberClub_POS\\View\\GeneralPage.xaml.cs",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\CyberClub_POS\\CyberClub_POS\\View\\GeneralPage.xaml.cs",
+              "RelativeToolTip": "CyberClub_POS\\View\\GeneralPage.xaml.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAYwGUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T20:07:19.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GeneralPage.xaml",
+              "DocumentMoniker": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\CyberClub_POS\\CyberClub_POS\\View\\GeneralPage.xaml",
+              "RelativeDocumentMoniker": "CyberClub_POS\\View\\GeneralPage.xaml",
+              "ToolTip": "D:\\\u0423\u0447\u0435\u0431\u0430\\\u041F\u0440\u043E\u0435\u043A\u0442\u044B\\CyberClub_POS\\CyberClub_POS\\View\\GeneralPage.xaml",
+              "RelativeToolTip": "CyberClub_POS\\View\\GeneralPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-25T20:07:07.681Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

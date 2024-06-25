@@ -14,8 +14,6 @@
         <Label Name="OperatorFName" Style="{x:Null}" Content="{Binding FullName}"  Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="166,55,750,493"/>
         <Label Content="Текущая смена:" Style="{x:Null}" Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="15,115,1081,435"/>
         <Label Name="WorkedHoursL" Style="{x:Null}" Content="{Binding WorkedHours}" Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="160,116,891,438"/>
-        <!--<Label Content="Обслужено за смену:" Style="{x:Null}" Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="15,147,1030,400"/>-->
-        <!--<Label Name="ServicedClients" Style="{x:Null}" Content="0 чел." Foreground="LightGray" FontSize="18" FontFamily="/Fonts/#Roboto Light" FontWeight="Medium" Margin="199,149,891,406"/>-->
         <Calendar  Name="MainCalendar" HorizontalAlignment="Left" Margin="354,131,0,0" VerticalAlignment="Top" Height="261" Width="266"/>
         <TextBlock HorizontalAlignment="Left" Margin="15,152,0,0" FontSize="18" Foreground="LightGray" FontFamily="/Fonts/#Roboto Light" TextWrapping="Wrap" VerticalAlignment="Top" Height="22"><Run Language="ru-ru" Text=""/> <Hyperlink Click="HelpLink_Click"> Открыть руководство пользователя </Hyperlink> <LineBreak/><Run Language="ru-ru"/></TextBlock>
         <Button Click="CyberX_site_Click" Cursor="Hand" Background="Transparent" BorderBrush="Transparent" Height="48" HorizontalAlignment="Left"  Width="60" Margin="15,183,0,351">

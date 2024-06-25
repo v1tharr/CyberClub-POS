@@ -34,5 +34,6 @@
                 <!-- Элементы отчета добавлены программно -->
             </StackPanel>
         </ScrollViewer>
+        
     </Grid>
 </Page>

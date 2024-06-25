@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.IO;
+
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace CyberClub_POS.View
@@ -90,23 +81,25 @@ namespace CyberClub_POS.View
 
         private void HelpLink_Click(object sender, RoutedEventArgs e)
         {
-            string pdfPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cyberposclub_guide.pdf");
+            string pdfFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cyberposclub_guide.pdf");
 
-            MessageBox.Show($"Path: {pdfPath}");
-
-            try
+            if (File.Exists(pdfFilePath))
             {
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                try
                 {
-                    FileName = pdfPath,
-                    UseShellExecute = true
-                });
+                    Process.Start(new ProcessStartInfo(pdfFilePath) { UseShellExecute = true });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Не удалось открыть PDF файл: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Не удалось открыть файл PDF: {ex.Message}");
+                MessageBox.Show("PDF файл не найден: " + pdfFilePath);
             }
         }
+
         private void CyberX_site_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://cyberxcommunity.ru/clubs/barnaul/cyberx-barnaul.html") { UseShellExecute = true });

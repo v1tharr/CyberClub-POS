@@ -223,5 +223,7 @@ namespace CyberClub_POS.View
 
             MessageBox.Show($"Отчет успешно создан и сохранен в {filePath}", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
+      
     }
 }

@@ -48,7 +48,7 @@ namespace CyberClub_POS.View
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void Window_MouseLeftButtonDown2(object sender, MouseButtonEventArgs e)

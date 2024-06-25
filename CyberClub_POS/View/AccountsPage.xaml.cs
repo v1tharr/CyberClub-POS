@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.ObjectModel;
 
 namespace CyberClub_POS.View
 {
@@ -63,6 +64,26 @@ namespace CyberClub_POS.View
         {
             LoadAccounts();
         }
+
+        private void DeleteRow_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+            connaccs = new PosSystemDBEntities();
+            if (AccountsDG.SelectedItems != null && AccountsDG.SelectedItems.Count > 0)
+            {
+                var toRemove = AccountsDG.SelectedItems.Cast<SaleWithUser>().ToList();
+                foreach (var sales in toRemove)
+                {
+                    var salesInDB = connaccs.Sales.Find(sales.SaleID);
+                    if (salesInDB != null)
+                    {
+                        connaccs.Sales.Remove(salesInDB);
+                    }
+                }
+                connaccs.SaveChanges();
+            }
+        }
+      
     }
 
   

@@ -32,6 +32,18 @@
             <TabItem Header="Счета">
                 <DataGrid Name="AccountsDG" AutoGenerateColumns="False" SelectionMode="Extended" CanUserResizeRows="False" CanUserResizeColumns="True" CanUserReorderColumns="False" Margin="10,0,11,0" Height="474">
                     <DataGrid.Columns>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox x:Name="AllSelect"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTextColumn x:Name="Clients" Header="№ платежа" Width="*" Binding="{Binding Path=SaleID}"/>
                         <DataGridTextColumn Header="Клиент" Width="*" Binding="{Binding Path=FullName}"/>
                         <DataGridTextColumn  Header="Тариф" Width="*" Binding="{Binding Path=CategoryName}"/>
@@ -39,6 +51,35 @@
                         <DataGridTextColumn  Header="Сумма" Width="*" Binding="{Binding Path=Amount}"/>
                         <DataGridTextColumn  Header="Метод оплаты" Width="*" Binding="{Binding Path=PaymentMethod}"/>
                         <DataGridTextColumn  Header="Время осуществления платежа" Width="*" Binding="{Binding Path=SaleTime}"/>
+                        <DataGridTemplateColumn x:Name="Storage_operation" Header="Действие" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        
+                                        <Button x:Name="DeleteRow_btn" Width="30" Cursor="Hand" Height="15" Click="DeleteRow_btn_Click">
+                                            <Button.Style>
+                                                <Style TargetType="{x:Type Button}">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                                <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                    <Setter Property="Background" Value="Transparent" />
+                                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                                    <Setter Property="BorderThickness" Value="0" />
+                                                    <Setter Property="OverridesDefaultStyle" Value="True" />
+                                                </Style>
+                                            </Button.Style>
+                                            <Image Source="/Assets/img_storage_delete.png"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
