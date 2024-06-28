@@ -10,6 +10,7 @@ using System.Windows.Input;
 
 namespace CyberClub_POS.ViewModel
 {
+    //Реализаци открытия страниц через главное меню
     internal class MainViewModel : ViewModelBase
     {
         PosSystemDBEntities conn = new PosSystemDBEntities();
@@ -43,7 +44,6 @@ namespace CyberClub_POS.ViewModel
             }   
         }
 
-
         public ICommand OpenAccountsPage
         {
             get
@@ -65,7 +65,6 @@ namespace CyberClub_POS.ViewModel
                 return new RelayCommand(() => StartPage = Storage);
             }
         }
-      
 
         public ICommand OpenSettingsPage
         {

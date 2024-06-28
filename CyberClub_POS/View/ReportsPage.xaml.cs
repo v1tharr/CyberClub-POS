@@ -29,7 +29,6 @@ namespace CyberClub_POS.View
             public SalesContext() : base("name=PosSystemDBEntities")
             {
             }
-
         }
 
         public struct SalesStruct
@@ -223,7 +222,5 @@ namespace CyberClub_POS.View
 
             MessageBox.Show($"Отчет успешно создан и сохранен в {filePath}", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
         }
-
-      
     }
 }

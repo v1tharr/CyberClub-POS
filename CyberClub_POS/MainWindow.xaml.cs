@@ -23,6 +23,7 @@ namespace CyberClub_POS.View
             MainFrame.Navigate(_generalPage);
             this.username = username;
         }
+
         private void MaxBtn_Click(object sender, RoutedEventArgs e)
         {
             if (WindowState == WindowState.Normal)

@@ -16,7 +16,6 @@ namespace CyberClub_POS.View
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             ConfigHelper.Instance.SetLang("ru");
         }
-
         private void Window_MouseLeftButtonDown3(object sender, MouseButtonEventArgs e)
         {
             if (e.ButtonState == MouseButtonState.Pressed)

@@ -26,7 +26,6 @@ namespace CyberClub_POS.View
             public string PeriodID { get; set; }
             public decimal? Price { get; set; }
         }
-
         private void LoadPrices()
         {
 
@@ -53,8 +52,6 @@ namespace CyberClub_POS.View
             Settings_DG.ItemsSource = PriceIDs;
         }
 
-        
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             PosSystemDBEntities SettingsConn = new PosSystemDBEntities();
@@ -68,7 +65,6 @@ namespace CyberClub_POS.View
             else
                 MessageBox.Show("Выберите шаблон для просмотра", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
-    
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {

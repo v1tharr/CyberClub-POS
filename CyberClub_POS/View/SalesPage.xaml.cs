@@ -14,7 +14,7 @@ namespace CyberClub_POS.View
         PosSystemDBEntities card = new PosSystemDBEntities();
         List<Products> sett1 = new List<Products>();
         private decimal totalAmount;
-
+        // Событие для уведомления об изменениях свойств
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void Switch_UserManagement_CLick(object sender, RoutedEventArgs e)
@@ -29,7 +29,7 @@ namespace CyberClub_POS.View
             sbpWindow.Show();
         }
 
-
+        // Форматирование общей суммы для отображения
         public string TotalAmountFormatted
         {
             get
@@ -58,7 +58,7 @@ namespace CyberClub_POS.View
             {
                 CategoryCB.Items.Add(item.CategoryName);
             }
-
+            // Заполнение комбобоксов данными из базы данных
             List<Days> dlist = card.Days.ToList();
             foreach (Days item in dlist)
             {
@@ -70,7 +70,7 @@ namespace CyberClub_POS.View
             {
                 TimeCB.Items.Add(item.PeriodName);
             }
-
+            // Заполнение списков товаров и методов оплаты
             FoodSale.ItemsSource = card.Products.Where(c => c.ProdCategory == "Еда").ToList();
             DrinksSale.ItemsSource = card.Products.Where(c => c.ProdCategory == "Напитки").ToList();
 
@@ -78,7 +78,7 @@ namespace CyberClub_POS.View
             PaymentMethod_ComboBox.Items.Add("Наличный расчет");
             PaymentMethod_ComboBox.Items.Add("Эквайринг");
             PaymentMethod_ComboBox.Items.Add("СБП");
-
+            // Заполнение комбобокса пользователями
             List<Users> list = card.Users.ToList();
             foreach (Users user in list)
             {
@@ -92,7 +92,7 @@ namespace CyberClub_POS.View
             TimeCB.SelectedIndex = 0;
         }
 
-
+        // Класс для хранения информации о продукте
         public class ProductInfo
         {
             public string Name { get; set; }
@@ -104,6 +104,7 @@ namespace CyberClub_POS.View
                 return $"{Name}, {Price.ToString(Price % 1 == 0 ? "F0" : "F2")} ₽, {AvailableQuantity} в нал.";
             }
         }
+        // Класс для хранения информации о продаваемом товаре
         public class SaleItem
         {
             public string CategoryName { get; set; }
@@ -115,6 +116,7 @@ namespace CyberClub_POS.View
                 return $"{CategoryName}, {PeriodName}, {Price} руб.";
             }
         }
+        // Список продуктов, добавленных в корзину
         public List<Products> lisst = new List<Products>();
 
         private void DrinksSale_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -134,8 +136,6 @@ namespace CyberClub_POS.View
             GoodsCard_DG.ItemsSource = lisst.ToList();
         }
 
-
-
         private void Pay_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -145,7 +145,7 @@ namespace CyberClub_POS.View
                     MessageBox.Show("Пожалуйста, заполните все поля перед оплатой.");
                     return;
                 }
-
+                // Получение выбранных категорий(тарифов), дней и периодов(часы на которое берется тариф)
                 Categories elem1 = card.Categories.FirstOrDefault(c => c.CategoryName == CategoryCB.SelectedItem.ToString());
                 Days elem2 = card.Days.FirstOrDefault(c => c.DayName == DaysCB.SelectedItem.ToString());
                 Periods elem3 = card.Periods.FirstOrDefault(c => c.PeriodName == TimeCB.SelectedItem.ToString());
@@ -155,7 +155,7 @@ namespace CyberClub_POS.View
                     MessageBox.Show("Выбранные данные не найдены в базе данных.");
                     return;
                 }
-
+                // Получение выбранного пользователя
                 string[] userParts = UserSelect_ComboBox.SelectedItem.ToString().Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 string fullName = userParts[0].Trim();
                 Users elem4 = card.Users.FirstOrDefault(c => c.FullName == fullName);

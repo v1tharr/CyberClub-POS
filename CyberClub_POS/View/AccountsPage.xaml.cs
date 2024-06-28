@@ -35,7 +35,7 @@ namespace CyberClub_POS.View
             public string ProductName { get; set; }
             public string CategoryName { get; set; } 
         }
-
+        //Для отображения исходных данных, что передают айдишники
         private void LoadAccounts()
         {
             var salesWithUsers = from sale in connaccs.Sales
@@ -85,7 +85,4 @@ namespace CyberClub_POS.View
         }
       
     }
-
-  
-
 }

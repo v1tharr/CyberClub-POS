@@ -6,8 +6,6 @@ using System.Windows.Controls;
 using System.Windows.Threading;
 using System.IO;
 
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
 namespace CyberClub_POS.View
 {
     public partial class GeneralPage : Page
@@ -16,7 +14,7 @@ namespace CyberClub_POS.View
         private string _fullName;
         private DateTime _loginTime;
         private DispatcherTimer _timer;
-
+        //Отображение логина, фио и таймера подсчета времени с момента авторизации
         public string Username
         {
             get => _username;
@@ -44,14 +42,21 @@ namespace CyberClub_POS.View
             InitializeComponent();
             DataContext = this;
         }
-        
-        public void Initialize(string username)
+
+        public void Initialize(string username, DateTime loginTime)
         {
             _username = username;
-            _loginTime = DateTime.Now;
+            _loginTime = loginTime;
             DisplayUserInfo();
             StartTimer();
         }
+
+        // Перегрузка Initialize для совместимости
+        public void Initialize(string username)
+        {
+            Initialize(username, DateTime.Now);
+        }
+
         private void DisplayUserInfo()
         {
             using (PosSystemDBEntities conn = new PosSystemDBEntities())
@@ -60,6 +65,7 @@ namespace CyberClub_POS.View
                 if (user != null)
                 {
                     FullName = user.FullName;
+                    OperatorFName.Content = FullName;
                 }
             }
         }
@@ -76,7 +82,7 @@ namespace CyberClub_POS.View
         {
             TimeSpan elapsed = DateTime.Now - _loginTime;
             WorkedHours = $"{elapsed.Hours}ч {elapsed.Minutes}м {elapsed.Seconds}с";
-            WorkedHoursL.Content = WorkedHours; 
+            WorkedHoursL.Content = WorkedHours;
         }
 
         private void HelpLink_Click(object sender, RoutedEventArgs e)
@@ -104,18 +110,20 @@ namespace CyberClub_POS.View
         {
             Process.Start(new ProcessStartInfo("https://cyberxcommunity.ru/clubs/barnaul/cyberx-barnaul.html") { UseShellExecute = true });
         }
+
         private void CyberX_VK_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://vk.com/cyberx_barnaul") { UseShellExecute = true });
         }
+
         private void Asiec_site_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://www.asiec.ru/") { UseShellExecute = true });
         }
+
         private void Me_GitHub_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://github.com/v1tharr/CyberClub_POS") { UseShellExecute = true });
         }
-
     }
 }

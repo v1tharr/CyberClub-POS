@@ -19,9 +19,9 @@
         <vm:MainViewModel/>
     </Window.DataContext>
 
-
     <Grid Background="#23262B">
 
+        <!--Во фрейме открываются страницы-->
         <Frame x:Name="MainFrame" BorderBrush="Transparent" BorderThickness="0" Content="{Binding StartPage}" Margin="235,0,0,0" NavigationUIVisibility="Hidden"/>
 
         <TextBlock Text="C Y B E R   C L U B   P O S"
@@ -40,12 +40,10 @@
                 HorizontalAlignment="Right"
                 Margin="0,0,0,8" />
 
-
         <StackPanel Background="#2E333A"
                     Width="230"
                     Orientation="Vertical"
                     HorizontalAlignment="Left">
-
 
             <Grid Height="50"
                   VerticalAlignment="Top"
@@ -66,7 +64,6 @@
                            HorizontalAlignment="Center" />
 
             </Grid>
-
 
             <Menu Height="450"
                   Background="Transparent"
@@ -198,8 +195,6 @@
         <Button x:Name="CloseBtn"
                 Style="{StaticResource CloseBtnStyle}"
                 Click="CloseBtn_Click" />
-
-        
 
     </Grid>
 

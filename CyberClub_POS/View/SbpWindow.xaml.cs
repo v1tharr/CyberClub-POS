@@ -27,12 +27,10 @@ namespace CyberClub_POS.View
             Close();
         }
 
-
         private void Min_QR_btn_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
-       
     }
 }

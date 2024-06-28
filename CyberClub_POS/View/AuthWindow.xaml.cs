@@ -22,7 +22,6 @@ namespace CyberClub_POS.View
             InitializeComponent();
         }
 
-
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             PosSystemDBEntities conn = new PosSystemDBEntities();

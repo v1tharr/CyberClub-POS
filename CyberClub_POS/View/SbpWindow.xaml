@@ -25,7 +25,6 @@
         Style="{StaticResource MinBtnStyle}"
         Margin="0,6,50,0"
          Click="Min_QR_btn_Click" RenderTransformOrigin="-0.429,0.493" Height="32" Width="32" />
-            
             <Button x:Name="Close_QR_btn"
         Style="{StaticResource CloseBtnStyle}"
         Click="Close_QR_btn_Click" Margin="0,4,10,0" />

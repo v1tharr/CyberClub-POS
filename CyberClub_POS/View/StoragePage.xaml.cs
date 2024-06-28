@@ -12,7 +12,6 @@ namespace CyberClub_POS.View
     {
         private PosSystemDBEntities _StorageTable;
 
-
         public StoragePage()
         {
             InitializeComponent();

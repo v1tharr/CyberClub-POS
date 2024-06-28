@@ -17,7 +17,6 @@
 
     </Page.Resources>
 
-
     <Grid Background="#23262B" Style="{StaticResource {x:Type Grid}}" Width="1241" Height="582" >
 
         <Button Click="Switch_UserManagement_CLick" Cursor="Hand"  Margin="10,8,0,0" HorizontalAlignment="Left" Height="94" VerticalAlignment="Top" Width="93">
@@ -41,10 +40,6 @@
             <Image Source="/Assets/img_newuser.png" Height="81" Width="86"/>
         </Button>
         <TextBlock Text="Корзина:"  FontSize="16" FontWeight="Bold" FontFamily="/Fonts/#Roboto Light" Foreground="LightGray" Margin="19,102,978,457"/>
-
-
-        <!--<TextBlock Text="ИТОГ:" FontSize="16" FontWeight="Bold" FontFamily="/Fonts/#Roboto Light" Foreground="LightGray" Margin="28,343,1157,215"/>-->
-        <!--<Label x:Name="TotalMoney" Style="{x:Null}" Content="{Binding TotalAmountFormatted, StringFormat=\{0:F2\} ₽}" FontSize="16" Foreground="LightGray" FontFamily="/Fonts/#Roboto Light" HorizontalContentAlignment="Right" HorizontalAlignment="Left"  Margin="75,334,0,215" Width="420" />-->
         <DataGrid x:Name="GoodsCard_DG" AutoGenerateColumns="False" SelectionMode="Extended" CanUserResizeRows="False"  CanUserResizeColumns="True" CanUserReorderColumns="False" Margin="19,130,738,253">
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="№" Width="*" Binding="{Binding Path=ProductID}"/>
@@ -74,25 +69,6 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <!--<Button Content="Распечатать чек" FontSize="16" BorderThickness="0" Cursor="Hand" Foreground="White" FontFamily="/Fonts/#Roboto Light" Width="150" Height="40" Margin="184,378,907,164">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="#462AD8"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#28AEED"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
-                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>-->
         <Button Content="Очистить" FontSize="16" BorderThickness="0" Cursor="Hand" Click="Clear_card_btn" Foreground="White" FontFamily="/Fonts/#Roboto Light" Width="150" Height="40" Margin="308,352,783,190">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
